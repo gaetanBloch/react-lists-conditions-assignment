@@ -4,11 +4,11 @@ import ValidationComponent from './ValidationComponent/ValidationComponent';
 
 class App extends Component {
   state = {
-    inputLength: 0
+    inputValue: ''
   };
 
   inputChangedHandler = event => {
-    this.setState({inputLength: event.target.value.length})
+    this.setState({inputValue: event.target.value})
   }
 
   render() {
@@ -36,8 +36,8 @@ class App extends Component {
         <hr/>
         <label>Input: </label>
         <input type="text" onChange={this.inputChangedHandler}/>
-        <p>Input length: {this.state.inputLength}</p>
-        <ValidationComponent length={this.state.inputLength}/>
+        <p>Input length: {this.state.inputValue.length}</p>
+        <ValidationComponent value={this.state.inputValue}/>
       </div>
     );
   }
